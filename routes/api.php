@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\DddsController;
+use App\Http\Controllers\PlansController;
+use App\Http\Controllers\StatesController;
+use App\Http\Controllers\TariffsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/states', [StatesController::class, 'index']);
+Route::post('/cities/{stateId}', [CitiesController::class, 'index']);
+Route::post('/ddds/{dddId}', [DddsController::class, 'index']);
+Route::post('/plans', [PlansController::class, 'index']);
+Route::post('/tariffs/{dddOrigin}/{dddDestination}/{minutes}/{planId?}', [TariffsController::class, 'index']);
