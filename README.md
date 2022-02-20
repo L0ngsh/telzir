@@ -1,64 +1,43 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Descrição
+Projeto desenvolvido para o processo seletivo da loldesign, de acordo com o problema passado desenvolvi um site simples e sem CRUD para que o usuario consiga simular suas cobranças com ligações entre qualquer cidade brasileira.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Requerimentos
+- [PHP 8](https://www.php.net/releases/8.0/en.php)
+- [Node](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+- [Composer](https://getcomposer.org/)
+- (Opcional) [Docker](https://www.docker.com/)
 
-## About Laravel
+## Instalação
+- Clonando o repositório<br/>
+`git clone https://github.com/L0ngsh/telzir.git`
+- Entre na pasta<br>
+- Copie o `example.env` para `.env` e coloque as informações necessarias no ambiente local para rodar
+- Utilize `composer update` e `composer install`, para baixar as bibliotecas do laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Iniciando com docker
+<strong>Aviso:</strong> Para esta situação é importante saber que se caso esteja utilizando windows e quiser rodar por docker será necessário instalar o [WSL 2](https://docs.microsoft.com/pt-br/windows/wsl/install) pois o windows não tem suporte padrão para o sail<br>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Após modificar o `.env` é necessário buildar o sail para que suba os containers corretamente<br>
+`sail build --no-cache`
+- Criando os containers e iniciando<br>
+`sail up -d`
+- Criando e populando as tabelas<br>
+`sail migrate --seed`
+- Compilando javascript e css<br>
+    - `npm install`
+    - `npm run dev`, caso queira compilar para desenvolvimento
+    - `npm run prod`, caso quera compilar para produção
+- Acesse a aplicação pelo navegador utilizando esta url:`http://localhost`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Iniciando web server local
+- Compilando javascript e css<br>
+    - `npm install`
+    - `npm run dev`, caso queira compilar para desenvolvimento
+    - `npm run prod`, caso quera compilar para produção
+- Para carrregar as mudanças do .env e limpar possivel cache do laravel<br>
+`php artisan optimize`
+- Para criar o banco e popular<br>
+`php artisan migrate --seed`
+- Para iniciar a apluicação<br>
+`php artisan serve`
