@@ -20,13 +20,18 @@ class tariffsSeeder extends Seeder
         $newTariffs = [];
         for ($i = 0; $i < count($ddds); $i++) {
             for ($j = 0; $j < count($ddds); $j++) {
+                $tariff = [
+                    'origin_ddd_id' => $ddds[$i]['id'],
+                    'destination_ddd_id' => $ddds[$j]['id'],
+                ];
+
                 if ($i != $j) {
-                    $newTariffs[] = [
-                        'origin_ddd_id' => $ddds[$i]['id'],
-                        'destination_ddd_id' => $ddds[$j]['id'],
-                        'price' => number_format((1 + mt_rand() / mt_getrandmax() * (3 - 1)), 2)
-                    ];
+                    $tariff['price'] = number_format((1 + mt_rand() / mt_getrandmax() * (3 - 1)), 2);
+                } else {
+                    $tariff['price'] = 0;
                 }
+
+                $newTariffs[] = $tariff;
             }
         }
 

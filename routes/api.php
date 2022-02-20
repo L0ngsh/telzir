@@ -19,8 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/states', [StatesController::class, 'index']);
-Route::post('/cities/{stateId}', [CitiesController::class, 'index']);
-Route::post('/ddds/{dddId}', [DddsController::class, 'index']);
-Route::post('/plans', [PlansController::class, 'index']);
-Route::post('/tariffs/{dddOrigin}/{dddDestination}/{minutes}/{planId?}', [TariffsController::class, 'index']);
+Route::post('/states', [StatesController::class, 'index'])->name('api.states');
+Route::post('/cities/{stateId}', [CitiesController::class, 'index'])->name('api.cities');
+Route::post('/plans', [PlansController::class, 'index'])->name('api.plans');
+Route::post('/tariffs/{dddOrigin}/{dddDestination}/{minutes}/{planId?}', [TariffsController::class, 'index'])->name('api.tariffs');

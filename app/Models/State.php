@@ -11,4 +11,8 @@ class State extends Model
         'name',
         'initials',
     ];
+
+    public function getFormatedStateName() {
+        return $this->initials.' - '.$this->name;
+    }
 }

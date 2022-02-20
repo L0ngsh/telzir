@@ -1,0 +1,361 @@
+:root {
+    --background-color: #161616;
+    --backgroud-overlay: #0e0e0ea0;
+    --color: #56acdf;
+    --color-dark: #478eb8;
+    --withe: #fff;
+    --gray: rgba(238,238,238,.5);
+    --black: #1e1e1e;
+}
+
+* {
+    box-sizing: border-box;
+    color: var(--withe);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--background-color);
+
+    font-size: 16px;
+
+    background-image: url('/img/world2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#consult,
+#plans,
+#banner {
+    height: 100vh;
+}
+
+section {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 300px;
+    height: 100%;
+
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+
+    background: var(--backgroud-overlay);
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background: var(--background-color);
+}
+
+nav {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.6rem;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li + li {
+    margin-left: 20px;
+}
+
+a[active="1"],
+.menu a:hover,
+.title:hover a {
+    color: var(--color);
+}
+
+.banner-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content > * + * {
+    margin-top: 20px;
+}
+
+.banner-content > * {
+    text-align: center;
+}
+
+.banner-title {
+    font-size: 2rem;
+}
+
+.banner-text {
+    font-size: 1.25rem;
+}
+
+.banner-button {
+    padding: 10px;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--black);
+
+    border-radius: 10px;
+
+    background: var(--color);
+    transition: background-color 0.2s;
+
+    cursor: pointer;
+}
+
+.banner-button:hover {
+    background: var(--color-dark);
+}
+
+.section-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    color: var(--withe);
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.plans-widget-area {
+    width: 100%;
+    margin: 20px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.plans-widget {
+    width: 300px;
+    background: var(--background-color);
+    padding: 10px;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+.plans-widget-name {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--color);
+}
+
+.plans-widget-description {
+    color: var(--gray);
+    font-size: 1.15rem;
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+.consult-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.consult-form > div {
+    width: 50%;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+
+    box-shadow: 5px 5px 5px var(--backgroud-overlay);
+}
+
+.inputArea {
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input > label {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.inputArea + .inputArea {
+    margin-top: 15px;
+}
+
+select,
+input {
+    border: none;
+    background: #000;
+    padding: 5px;
+
+    border-bottom: 1px solid var(--color);
+    font-size: 1rem;
+}
+
+select:focus,
+input:focus {
+    border: none;
+}
+
+select,
+option,
+input {
+    color: var(--withe);
+    cursor: pointer;
+}
+
+#sendConsult {
+    border: none;
+    box-sizing: border-box;
+
+    width: 50%;
+    padding: 5px;
+    font-size: 1.25rem;
+
+    color: var(--black);
+
+    border-radius: 2px;
+    cursor: pointer;
+
+    background: var(--color);
+    transition: background-color 0.2s;
+}
+
+#sendConsult:hover {
+    background: var(--color-dark);
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: var(--backgroud-overlay);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 300px;
+    min-width: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1rem;
+
+    background: var(--background-color);
+}
+
+.modal > div {
+    width: 100%;
+    border-bottom: 1px solid var(--color);
+    display: flex;
+}
+
+.modal > div > div {
+    flex: 1;
+}
+
+.modal > div + div {
+    margin-top: 10px;
+}
+
+#toast {
+    display: none;
+
+    position: fixed;
+    right: -1000px;
+    top: 100px;
+    font-size: 1rem;
+
+    background: var(--color-dark);
+    color: var(--withe);
+
+    padding: 10px;
+
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 950px) {
+    .inputArea {
+        flex-direction: column;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .input + .input {
+        margin-top: 10px;
+    }
+}
